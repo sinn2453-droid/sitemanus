@@ -1,0 +1,55 @@
+body{
+  margin:0;
+  font-family:sans-serif;
+  background:#f2f2f2;
+}
+
+/* верхня панель */
+.header{
+  height:140px;
+  background:linear-gradient(180deg,#8b5cf6,#a855f7);
+  color:white;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+/* аватар */
+.avatar{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:white;
+}
+
+/* блоки як у Telegram */
+.card{
+  background:white;
+  border-radius:16px;
+  padding:16px;
+  margin:12px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* кнопки */
+.button{
+  background:#3b82f6;
+  color:white;
+  border:none;
+  padding:12px 20px;
+  border-radius:20px;
+}
+
+/* нижня панель */
+.navbar{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  height:70px;
+  background:white;
+  border-top:1px solid #eee;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+}
