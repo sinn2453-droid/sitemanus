@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div>
+    <div style={{ paddingBottom: "100px" }}>
 
       <div className="header">
         <div className="avatar"></div>
@@ -12,7 +12,7 @@ export default function Home() {
         <p>Опублікуйте фото або відео</p>
       </div>
 
-      <div style={{textAlign:"center"}}>
+      <div style={{ textAlign: "center" }}>
         <button className="button">Додати публікацію</button>
       </div>
 
