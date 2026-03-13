@@ -3,68 +3,77 @@
 import { useState } from "react";
 
 export default function Sidebar() {
-
   const [open, setOpen] = useState(false);
+
+  const menuItems = [
+    { icon: "person", text: "Профіль" },
+    { icon: "movie", text: "Reels" },
+    { icon: "image", text: "Фото" },
+    { icon: "redeem", text: "Подарунки" },
+    { icon: "hub", text: "Канали" },
+    { icon: "settings", text: "Налаштування" },
+  ];
 
   return (
     <>
+      {/* Кнопка "три риски" (Hamburger Menu) */}
       <button
         onClick={() => setOpen(true)}
-        style={{
-          position: "fixed",
-          top: "20px",
-          left: "20px",
-          zIndex: 999999,
-          width: "44px",
-          height: "44px",
-          borderRadius: "12px",
-          border: "none",
-          background: "rgba(255,255,255,0.6)",
-          backdropFilter: "blur(10px)",
-          fontSize: "22px",
-          cursor: "pointer"
-        }}
+        className="menuButton"
+        aria-label="Open Menu"
       >
-        ☰
+        <span className="material-symbols-rounded" style={{ fontSize: "28px" }}>
+          menu
+        </span>
       </button>
 
+      {/* Оверлей (затемнення фону при відкритті) */}
       {open && (
-        <>
-          <div
-            onClick={() => setOpen(false)}
-            style={{
-              position: "fixed",
-              inset: 0,
-              background: "rgba(0,0,0,0.4)",
-              zIndex: 999998
-            }}
-          />
-
-          <div
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              width: "260px",
-              height: "100%",
-              background: "rgba(255,255,255,0.9)",
-              backdropFilter: "blur(20px)",
-              padding: "20px",
-              zIndex: 999999
-            }}
-          >
-            <h2>BUTBIT</h2>
-
-            <p>Профіль</p>
-            <p>Reels</p>
-            <p>Фото</p>
-            <p>Подарунки</p>
-            <p>Канали</p>
-            <p>Налаштування</p>
-
-          </div>
-        </>
+        <div
+          className="overlay"
+          onClick={() => setOpen(false)}
+        />
       )}
+
+      {/* Бокова панель */}
+      <div className={`sidebar ${open ? "open" : ""}`}>
+        <div className="sidebarLogo">
+          <span className="material-symbols-rounded logoIcon" style={{ color: "#6aa6ff" }}>
+            auto_awesome
+          </span>
+          <span className="logoText">BUTBIT</span>
+        </div>
+
+        <div className="sidebarMenu">
+          {menuItems.map((item, index) => (
+            <div key={index} className="sidebarItem">
+              <span className="material-symbols-rounded">{item.icon}</span>
+              <span>{item.text}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Кнопка закриття всередині панелі */}
+        <button 
+          onClick={() => setOpen(false)}
+          style={{
+            marginTop: "auto",
+            padding: "12px",
+            background: "rgba(255,255,255,0.1)",
+            border: "none",
+            borderRadius: "12px",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "8px"
+          }}
+        >
+          <span className="material-symbols-rounded">close</span>
+          Закрити
+        </button>
+      </div>
     </>
   );
-}
+        }
+              
