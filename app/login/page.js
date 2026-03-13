@@ -1,6 +1,6 @@
 "use client";
 
-import { supabase } from "@/lib/supabase";
+import { supabase } from "../../lib/supabase";
 
 export default function Login() {
 
@@ -11,8 +11,9 @@ export default function Login() {
   };
 
   return (
-    <div>
+    <div style={{ textAlign: "center", padding: "40px" }}>
       <h1>Login</h1>
+
       <button onClick={loginWithGoogle}>
         Login with Google
       </button>
