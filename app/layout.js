@@ -1,3 +1,5 @@
+"use client";
+
 import "./globals.css";
 import Sidebar from "../components/Sidebar";
 
@@ -14,10 +16,8 @@ export default function RootLayout({ children }) {
 
       <body>
 
-        {/* бокова панель */}
         <Sidebar />
 
-        {/* контент сторінок */}
         {children}
 
       </body>
