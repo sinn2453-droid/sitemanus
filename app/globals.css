@@ -220,38 +220,6 @@ transform:scale(1.05);
 
 }
 
-
-
-/* HEADER */
-
-.header{
-
-height:220px;
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-justify-content:center;
-
-color:white;
-
-background:linear-gradient(
-135deg,
-#6366f1,
-#a855f7,
-#ec4899
-);
-
-border-bottom-left-radius:40px;
-border-bottom-right-radius:40px;
-
-}
-
-
-
 /* avatar */
 
 .avatar{
