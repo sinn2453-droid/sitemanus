@@ -1,0 +1,169 @@
+body{
+  margin:0;
+  font-family:sans-serif;
+  min-height:100vh;
+
+  background:linear-gradient(
+    180deg,
+    #7aa8ff 0%,
+    #a8b6ff 30%,
+    #ffb6c1 65%,
+    #ffd6a5 100%
+  );
+}
+
+/* контейнер сторінки */
+
+.app{
+  min-height:100vh;
+  padding-top:80px;
+  padding-bottom:120px;
+}
+
+/* glass блок */
+
+.glass{
+  background:rgba(255,255,255,0.35);
+  backdrop-filter:blur(20px);
+  border-radius:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* профіль */
+
+.profileCard{
+  margin:20px;
+  padding:24px;
+  text-align:center;
+}
+
+.avatar{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:white;
+  margin:0 auto 12px auto;
+}
+
+/* блоки */
+
+.blocks{
+  margin:20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.block{
+  padding:18px;
+  text-align:center;
+  font-weight:600;
+}
+
+/* кнопка */
+
+.button{
+  border:none;
+  padding:14px 24px;
+  border-radius:24px;
+
+  background:linear-gradient(
+    90deg,
+    #5aa7ff,
+    #ff6ad5,
+    #ff9966
+  );
+
+  color:white;
+  font-size:16px;
+}
+
+/* navbar */
+
+.navbar{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+
+  width:90%;
+  max-width:420px;
+  height:70px;
+
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+
+  border-radius:30px;
+
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(20px);
+}
+
+/* кнопка плюс */
+
+.addButton{
+  width:56px;
+  height:56px;
+
+  border-radius:50%;
+  border:none;
+
+  background:linear-gradient(
+    90deg,
+    #5aa7ff,
+    #ff6ad5,
+    #ff9966
+  );
+
+  color:white;
+  font-size:26px;
+
+  transform:translateY(-20px);
+}
+
+/* sidebar */
+
+.sidebarButton{
+  position:fixed;
+  top:20px;
+  left:20px;
+
+  width:44px;
+  height:44px;
+
+  border-radius:12px;
+  border:none;
+
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(10px);
+
+  font-size:22px;
+
+  z-index:999999;
+}
+
+.sidebar{
+  position:fixed;
+  top:0;
+  left:0;
+
+  width:260px;
+  height:100vh;
+
+  padding:20px;
+
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(20px);
+
+  z-index:999999;
+}
+
+.sidebarOverlay{
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,0.4);
+
+  z-index:999998;
+}
