@@ -4,100 +4,38 @@ import { useState } from "react";
 
 export default function Sidebar() {
 
-  const [open, setOpen] = useState(false);
+  const [open,setOpen] = useState(false);
 
   return (
     <>
-      {/* кнопка меню */}
       <button
-        className="menuButton"
-        onClick={() => setOpen(true)}
+        style={{
+          position:"fixed",
+          top:"20px",
+          left:"20px",
+          zIndex:9999,
+          width:"40px",
+          height:"40px",
+          borderRadius:"10px",
+          border:"none",
+          background:"white",
+          cursor:"pointer"
+        }}
+        onClick={()=>setOpen(true)}
       >
-        <span className="material-symbols-rounded">
-          menu
-        </span>
+        ☰
       </button>
 
-      {/* затемнення */}
       {open && (
         <div
-          className="overlay"
-          onClick={() => setOpen(false)}
+          style={{
+            position:"fixed",
+            inset:0,
+            background:"rgba(0,0,0,0.5)"
+          }}
+          onClick={()=>setOpen(false)}
         />
       )}
-
-      {/* бокова панель */}
-      <div className={`sidebar ${open ? "open" : ""}`}>
-
-        {/* логотип */}
-        <div className="sidebarLogo">
-
-          <span className="material-symbols-rounded logoIcon">
-            auto_awesome
-          </span>
-
-          <span className="logoText">
-            BUTBIT
-          </span>
-
-        </div>
-
-
-        {/* меню */}
-        <div className="sidebarMenu">
-
-          <div className="sidebarItem">
-            <span className="material-symbols-rounded">
-              person
-            </span>
-            Профіль
-          </div>
-
-          <div className="sidebarItem">
-            <span className="material-symbols-rounded">
-              videocam
-            </span>
-            Reels
-          </div>
-
-          <div className="sidebarItem">
-            <span className="material-symbols-rounded">
-              photo
-            </span>
-            Фото
-          </div>
-
-          <div className="sidebarItem">
-            <span className="material-symbols-rounded">
-              redeem
-            </span>
-            Подарунки
-          </div>
-
-          <div className="sidebarItem">
-            <span className="material-symbols-rounded">
-              groups
-            </span>
-            Канали
-          </div>
-
-          <div className="sidebarItem">
-            <span className="material-symbols-rounded">
-              chat
-            </span>
-            Повідомлення
-          </div>
-
-          <div className="sidebarItem">
-            <span className="material-symbols-rounded">
-              settings
-            </span>
-            Налаштування
-          </div>
-
-        </div>
-
-      </div>
     </>
   );
 }
