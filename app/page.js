@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabase";
+import { supabase } from "../lib/supabase";
 
 export default function Home() {
 
@@ -47,7 +47,7 @@ export default function Home() {
         <h1>SiteManus</h1>
         <p>Увійдіть щоб користуватись застосунком</p>
 
-        <button onClick={loginWithGoogle} className="button">
+        <button onClick={loginWithGoogle}>
           Увійти через Google
         </button>
       </div>
