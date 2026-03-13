@@ -2,17 +2,16 @@ body{
   margin:0;
   font-family:sans-serif;
   min-height:100vh;
-
   background:linear-gradient(
     180deg,
-    #7aa8ff 0%,
-    #a8b6ff 30%,
-    #ffb6c1 65%,
-    #ffd6a5 100%
+    #7aa8ff,
+    #b9a8ff,
+    #ffb8c6,
+    #ffd6a5
   );
 }
 
-/* контейнер сторінки */
+/* сторінка */
 
 .app{
   min-height:100vh;
@@ -20,13 +19,102 @@ body{
   padding-bottom:120px;
 }
 
-/* glass блок */
+/* glass ефект */
 
 .glass{
   background:rgba(255,255,255,0.35);
   backdrop-filter:blur(20px);
   border-radius:24px;
   box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* login екран */
+
+.loginScreen{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+}
+
+.loginCard{
+  max-width:420px;
+  padding:30px;
+}
+
+/* логотип */
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.logoText{
+  font-size:36px;
+  font-weight:800;
+
+  background:linear-gradient(
+    90deg,
+    #5aa7ff,
+    #ff6ad5,
+    #ff9966
+  );
+
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.logoIcon{
+  font-size:36px;
+}
+
+/* опис */
+
+.tagline{
+  font-size:16px;
+  line-height:1.6;
+  margin-bottom:20px;
+}
+
+/* функції */
+
+.features{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.feature{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* кнопка Google */
+
+.googleGlassButton{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  width:100%;
+  padding:14px;
+
+  border-radius:20px;
+  border:none;
+
+  font-size:16px;
+  font-weight:600;
+
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(20px);
+
+  cursor:pointer;
 }
 
 /* профіль */
@@ -62,7 +150,7 @@ body{
 
 /* кнопка */
 
-.button{
+.gradientButton{
   border:none;
   padding:14px 24px;
   border-radius:24px;
@@ -75,10 +163,9 @@ body{
   );
 
   color:white;
-  font-size:16px;
 }
 
-/* navbar */
+/* нижня навігація */
 
 .navbar{
   position:fixed;
@@ -100,7 +187,7 @@ body{
   backdrop-filter:blur(20px);
 }
 
-/* кнопка плюс */
+/* плюс кнопка */
 
 .addButton{
   width:56px;
@@ -166,74 +253,4 @@ body{
   background:rgba(0,0,0,0.4);
 
   z-index:999998;
-}
-.loginScreen{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:30px;
-}
-
-.loginCard{
-  max-width:420px;
-  padding:30px;
-  text-align:left;
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-bottom:20px;
-}
-
-.logoText{
-  font-size:34px;
-  font-weight:700;
-}
-
-.logoIcon{
-  font-size:34px;
-}
-
-.tagline{
-  font-size:16px;
-  line-height:1.6;
-  margin-bottom:20px;
-}
-
-.features{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  margin-bottom:20px;
-}
-
-.feature{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-size:15px;
-}
-
-.googleGlassButton{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-
-  width:100%;
-  padding:14px;
-
-  border-radius:20px;
-  border:none;
-
-  font-size:16px;
-  font-weight:600;
-
-  background:rgba(255,255,255,0.6);
-  backdrop-filter:blur(20px);
-
-  cursor:pointer;
 }
