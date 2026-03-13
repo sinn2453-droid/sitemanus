@@ -14,7 +14,7 @@ export default function Sidebar() {
           position:"fixed",
           top:"20px",
           left:"20px",
-          zIndex:9999,
+          zIndex:999999,
           width:"44px",
           height:"44px",
           borderRadius:"12px",
@@ -29,15 +29,42 @@ export default function Sidebar() {
       </button>
 
       {open && (
-        <div
-          onClick={()=>setOpen(false)}
-          style={{
-            position:"fixed",
-            inset:0,
-            background:"rgba(0,0,0,0.4)"
-          }}
-        />
+        <>
+          <div
+            onClick={()=>setOpen(false)}
+            style={{
+              position:"fixed",
+              inset:0,
+              background:"rgba(0,0,0,0.4)",
+              zIndex:999998
+            }}
+          />
+
+          <div
+            style={{
+              position:"fixed",
+              top:0,
+              left:0,
+              width:"260px",
+              height:"100%",
+              background:"rgba(255,255,255,0.9)",
+              backdropFilter:"blur(20px)",
+              padding:"20px",
+              zIndex:999999
+            }}
+          >
+            <h2>BUTBIT</h2>
+
+            <p>Профіль</p>
+            <p>Reels</p>
+            <p>Фото</p>
+            <p>Подарунки</p>
+            <p>Канали</p>
+            <p>Налаштування</p>
+
+          </div>
+        </>
       )}
     </>
   );
-            }
+}
