@@ -18,7 +18,9 @@ color:#111;
 
 }
 
-
+.menuButton{
+z-index:2000;
+}
 
 /* glass */
 
