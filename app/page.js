@@ -163,32 +163,71 @@ explore
 </div>
 
 </div>
+if (!user) {
+  return (
+    <div className="loginScreen">
 
+      <div className="glass loginCard">
 
-<button
-className="googleGlassButton"
-onClick={loginWithGoogle}
->
+        <div className="logo">
+          <span className="material-symbols-rounded logoIcon">
+            auto_awesome
+          </span>
 
-<img
-src="https://www.svgrepo.com/show/475656/google-color.svg"
-width="22"
-/>
+          <h1 className="logoText">
+            BUTBIT
+          </h1>
+        </div>
 
-Увійти через Google
+        <p className="tagline">
+          BUTBIT — це сучасна соціальна мережа,
+          де люди діляться моментами життя,
+          створюють короткі відео, публікують фото
+          та знаходять однодумців.
+        </p>
 
-</button>
+        <div className="features">
 
-</div>
+          <div className="feature">
+            <span className="material-symbols-rounded">
+              videocam
+            </span>
+            Публікуйте короткі відео
+          </div>
 
-</div>
+          <div className="feature">
+            <span className="material-symbols-rounded">
+              favorite
+            </span>
+            Ставте лайки
+          </div>
 
-);
+          <div className="feature">
+            <span className="material-symbols-rounded">
+              redeem
+            </span>
+            Даруйте подарунки
+          </div>
 
-}
+        </div>
 
+        <button
+          className="googleGlassButton"
+          onClick={loginWithGoogle}
+        >
+          <img
+            src="https://www.svgrepo.com/show/475656/google-color.svg"
+            width="22"
+          />
 
+          Увійти через Google
+        </button>
 
+      </div>
+
+    </div>
+  );
+              }
 return (
 
 <div style={{ paddingBottom:"120px", paddingTop:"40px" }}>
