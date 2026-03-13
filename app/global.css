@@ -167,3 +167,73 @@ body{
 
   z-index:999998;
 }
+.loginScreen{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+}
+
+.loginCard{
+  max-width:420px;
+  padding:30px;
+  text-align:left;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.logoText{
+  font-size:34px;
+  font-weight:700;
+}
+
+.logoIcon{
+  font-size:34px;
+}
+
+.tagline{
+  font-size:16px;
+  line-height:1.6;
+  margin-bottom:20px;
+}
+
+.features{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.feature{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:15px;
+}
+
+.googleGlassButton{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  width:100%;
+  padding:14px;
+
+  border-radius:20px;
+  border:none;
+
+  font-size:16px;
+  font-weight:600;
+
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(20px);
+
+  cursor:pointer;
+}
