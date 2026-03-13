@@ -9,19 +9,32 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const checkUser = async () => {
-      const { data } = await supabase.auth.getUser();
+
+    supabase.auth.getUser().then(({ data }) => {
       setUser(data.user);
       setLoading(false);
+    });
+
+    const { data: listener } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        setUser(session?.user ?? null);
+      }
+    );
+
+    return () => {
+      listener.subscription.unsubscribe();
     };
 
-    checkUser();
   }, []);
 
   const loginWithGoogle = async () => {
     await supabase.auth.signInWithOAuth({
       provider: "google",
     });
+  };
+
+  const logout = async () => {
+    await supabase.auth.signOut();
   };
 
   if (loading) {
@@ -47,6 +60,7 @@ export default function Home() {
       <div className="header">
         <div className="avatar"></div>
         <h2>Мій профіль</h2>
+        <p>{user.email}</p>
       </div>
 
       <div className="card">
@@ -58,6 +72,10 @@ export default function Home() {
         <button className="button">Додати публікацію</button>
       </div>
 
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <button onClick={logout}>Вийти</button>
+      </div>
+
       <div className="navbar">
         <div>Чати</div>
         <div>Контакти</div>
@@ -67,4 +85,4 @@ export default function Home() {
 
     </div>
   );
-    }
+}
