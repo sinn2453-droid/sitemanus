@@ -28,31 +28,31 @@ listener.subscription.unsubscribe();
 }, []);
 
 
+
 const loginWithGoogle = async () => {
 
 await supabase.auth.signInWithOAuth({
-provider: "google"
+provider: "google",
 });
 
 };
 
 
+
 const logout = async () => {
-
 await supabase.auth.signOut();
-
 };
+
 
 
 if (loading) {
 
 return (
 
-<div className="center">
+<div className="loginScreen">
 
-<div className="glass card">
+<div className="glass loginCard">
 
-<h2>SiteManus</h2>
 <p>Завантаження...</p>
 
 </div>
@@ -64,32 +64,80 @@ return (
 }
 
 
+
 if (!user) {
 
 return (
 
-<div className="center">
+<div className="loginScreen">
 
-<div className="glass card">
+<div className="glass loginCard">
 
-<h1>SiteManus</h1>
+<div className="logo">
 
-<p>
-Платформа для публікації фото,
-відео та пошуку цікавого контенту.
+<span className="material-symbols-rounded">
+auto_awesome
+</span>
+
+<h1>BUTBIT</h1>
+
+</div>
+
+<p className="tagline">
+
+Платформа для публікації фото та відео,
+дослідження нового контенту
+та пошуку натхнення.
+
 </p>
 
-<p>
-Діліться своїми моментами,
-досліджуйте нові ідеї
-та знаходьте натхнення.
-</p>
 
-<button className="googleButton" onClick={loginWithGoogle}>
+<div className="features">
+
+<div className="feature">
+
+<span className="material-symbols-rounded">
+photo_camera
+</span>
+
+<p>Публікуйте фото та відео</p>
+
+</div>
+
+
+<div className="feature">
+
+<span className="material-symbols-rounded">
+explore
+</span>
+
+<p>Досліджуйте нові ідеї</p>
+
+</div>
+
+
+<div className="feature">
+
+<span className="material-symbols-rounded">
+favorite
+</span>
+
+<p>Знаходьте натхнення</p>
+
+</div>
+
+</div>
+
+
+
+<button
+className="googleButton"
+onClick={loginWithGoogle}
+>
 
 <img
 src="https://www.svgrepo.com/show/475656/google-color.svg"
-width="20"
+width="22"
 />
 
 Увійти через Google
@@ -105,25 +153,16 @@ width="20"
 }
 
 
+
 return (
 
 <div style={{ paddingBottom:"120px" }}>
 
 
+
 <div className="header">
 
-{user.user_metadata?.avatar_url ? (
-
-<img
-src={user.user_metadata.avatar_url}
-className="avatar"
-/>
-
-) : (
-
 <div className="avatar"></div>
-
-)}
 
 <h2>Мій профіль</h2>
 
@@ -132,21 +171,25 @@ className="avatar"
 </div>
 
 
-<div className="card">
+
+<div className="glass card">
 
 <h3>Публікацій ще немає</h3>
 
 <p>
+
 Опублікуйте фото або відео,
 щоб поділитися своїми моментами
+
 </p>
 
 </div>
 
 
+
 <div style={{ textAlign:"center" }}>
 
-<button className="button">
+<button className="rainbowButton">
 
 <span className="material-symbols-rounded">
 add
@@ -159,39 +202,46 @@ add
 </div>
 
 
+
 <div style={{ textAlign:"center", marginTop:"20px" }}>
 
 <button onClick={logout}>
+
 Вийти
+
 </button>
 
 </div>
 
 
-<nav className="navbar glass">
 
-<span className="material-symbols-rounded">
+<div className="navbar">
+
+<span className="material-symbols-rounded navIcon">
 home
 </span>
 
-<span className="material-symbols-rounded">
+<span className="material-symbols-rounded navIcon">
 search
 </span>
+
+<div className="addButton">
 
 <span className="material-symbols-rounded">
 add
 </span>
 
-<span className="material-symbols-rounded">
+</div>
+
+<span className="material-symbols-rounded navIcon">
 chat
 </span>
 
-<span className="material-symbols-rounded">
+<span className="material-symbols-rounded navIcon">
 person
 </span>
 
-</nav>
-
+</div>
 
 </div>
 
