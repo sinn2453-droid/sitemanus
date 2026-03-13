@@ -4,12 +4,18 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 
 export default function Home() {
+
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => {
+    const checkUser = async () => {
+      const { data } = await supabase.auth.getUser();
       setUser(data.user);
-    });
+      setLoading(false);
+    };
+
+    checkUser();
   }, []);
 
   const loginWithGoogle = async () => {
@@ -17,6 +23,10 @@ export default function Home() {
       provider: "google",
     });
   };
+
+  if (loading) {
+    return <p>Завантаження...</p>;
+  }
 
   if (!user) {
     return (
@@ -33,6 +43,7 @@ export default function Home() {
 
   return (
     <div style={{ paddingBottom: "100px" }}>
+
       <div className="header">
         <div className="avatar"></div>
         <h2>Мій профіль</h2>
@@ -53,6 +64,7 @@ export default function Home() {
         <div>Налаштування</div>
         <div>Профіль</div>
       </div>
+
     </div>
   );
     }
