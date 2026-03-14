@@ -11,12 +11,77 @@ export default function Login() {
   };
 
   return (
-    <div style={{ textAlign: "center", padding: "40px" }}>
-      <h1>Login</h1>
 
-      <button onClick={loginWithGoogle}>
-        Login with Google
-      </button>
+    <div className="loginScreen">
+
+      <div className="glass loginCard">
+
+        <div className="logo">
+
+          <span className="material-symbols-rounded logoIcon">
+            auto_awesome
+          </span>
+
+          <h1 className="logoText">
+            BUTBIT
+          </h1>
+
+        </div>
+
+
+        <p className="tagline">
+
+          BUTBIT — сучасна соціальна мережа,
+          де можна ділитися короткими відео,
+          фотографіями та знаходити нових
+          друзів з усього світу.
+
+        </p>
+
+
+        <div className="features">
+
+          <div className="feature">
+            <span className="material-symbols-rounded">
+              videocam
+            </span>
+            Публікуйте відео
+          </div>
+
+          <div className="feature">
+            <span className="material-symbols-rounded">
+              favorite
+            </span>
+            Ставте лайки
+          </div>
+
+          <div className="feature">
+            <span className="material-symbols-rounded">
+              redeem
+            </span>
+            Даруйте подарунки
+          </div>
+
+        </div>
+
+
+        <button
+          className="googleGlassButton"
+          onClick={loginWithGoogle}
+        >
+
+          <img
+            src="https://www.svgrepo.com/show/475656/google-color.svg"
+            width="22"
+          />
+
+          Увійти через Google
+
+        </button>
+
+      </div>
+
     </div>
+
   );
 }
