@@ -1,7 +1,6 @@
 "use client";
 
 import { supabase } from "../../lib/supabase";
-import "./login.css";
 
 export default function Login() {
 
@@ -54,4 +53,4 @@ export default function Login() {
       </div>
     </div>
   );
-}
+              }
