@@ -1,6 +1,7 @@
 "use client";
 
 import { supabase } from "../../lib/supabase";
+import "./login.css";
 
 export default function Login() {
 
@@ -11,77 +12,46 @@ export default function Login() {
   };
 
   return (
-
     <div className="loginScreen">
-
       <div className="glass loginCard">
-
         <div className="logo">
-
           <span className="material-symbols-rounded logoIcon">
             auto_awesome
           </span>
-
-          <h1 className="logoText">
-            BUTBIT
-          </h1>
-
+          <h1 className="logoText">BUTBIT</h1>
         </div>
 
-
         <p className="tagline">
-
           BUTBIT — сучасна соціальна мережа,
           де можна ділитися короткими відео,
           фотографіями та знаходити нових
           друзів з усього світу.
-
         </p>
 
-
         <div className="features">
-
           <div className="feature">
-            <span className="material-symbols-rounded">
-              videocam
-            </span>
+            <span className="material-symbols-rounded">videocam</span>
             Публікуйте відео
           </div>
-
           <div className="feature">
-            <span className="material-symbols-rounded">
-              favorite
-            </span>
+            <span className="material-symbols-rounded">favorite</span>
             Ставте лайки
           </div>
-
           <div className="feature">
-            <span className="material-symbols-rounded">
-              redeem
-            </span>
+            <span className="material-symbols-rounded">redeem</span>
             Даруйте подарунки
           </div>
-
         </div>
 
-
-        <button
-          className="googleGlassButton"
-          onClick={loginWithGoogle}
-        >
-
+        <button className="googleGlassButton" onClick={loginWithGoogle}>
           <img
             src="https://www.svgrepo.com/show/475656/google-color.svg"
             width="22"
+            alt="Google"
           />
-
           Увійти через Google
-
         </button>
-
       </div>
-
     </div>
-
   );
 }
