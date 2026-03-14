@@ -166,3 +166,7 @@ body{
 
   transform:translateY(-12px);
 }
+.material-symbols-rounded{
+  font-size:26px;
+  line-height:1;
+}
